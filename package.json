@@ -1,0 +1,26 @@
+{
+  "name": "curso-typescript",
+  "version": "1.0.0",
+  "description": "Estudando typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "ts-node src/index.ts",
+    "dev-typescript": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1001Josias/curso-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1001Josias/curso-typescript/issues"
+  },
+  "homepage": "https://github.com/1001Josias/curso-typescript#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.0"
+  }
+}
