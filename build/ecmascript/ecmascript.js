@@ -23,16 +23,25 @@ saldacao();
 // const falarCom = pessoa: string => console.log('Olá ' + pessoa)
 const falarCom = (pessoa) => console.log('Olá ' + pessoa);
 falarCom('João');
-function normalComThis() {
-    console.log(this);
+// function normalComThis(){
+//     console.log(this)
+// }
+// normalComThis()
+// const normalComThisEspecial = normalComThis.bind({nome: 'José'})
+// normalComThisEspecial()
+// // contexto lexico
+// console.log(this)
+// const  arrowComThis = () => console.log(this)
+// arrowComThis()
+// const  arrowComThisEspecial = arrowComThis.bind({nome: 'Maria'})
+// arrowComThisEspecial()
+function contagemRegressiva(inicio = 5, fim = inicio - 5) {
+    console.log(inicio);
+    while (inicio > fim) {
+        inicio--;
+        console.log(inicio);
+    }
 }
-normalComThis();
-const normalComThisEspecial = normalComThis.bind({ nome: 'José' });
-normalComThisEspecial();
-// contexto lexico
-console.log(this);
-const arrowComThis = () => console.log(this);
-arrowComThis();
-const arrowComThisEspecial = arrowComThis.bind({ nome: 'Maria' });
-arrowComThisEspecial();
+contagemRegressiva();
+contagemRegressiva(3);
 //# sourceMappingURL=ecmascript.js.map
