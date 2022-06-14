@@ -44,4 +44,28 @@ function contagemRegressiva(inicio = 5, fim = inicio - 5) {
 }
 contagemRegressiva();
 contagemRegressiva(3);
+//rest & spread
+const numbers = [1, 10, 55, -5];
+console.log(Math.max(...numbers));
+const turmaA = ['Maria', 'João', 'José'];
+const turmaB = ['Priscila', 'Carla', ...turmaA, 'Fernanda'];
+console.log(turmaA);
+console.log(turmaB);
+function retornaArray(...args) {
+    return args;
+}
+const numeros = retornaArray(5, 6, 8, 1, 22, 79, 23, 589);
+console.log(numeros);
+console.log(retornaArray(...numbers));
+// rest & spread (tupla)
+const tupla = [1, 'abc', true];
+function tuplaParam1(a, b, c) {
+    console.log(`1) ${a} ${b} ${c}`);
+}
+tuplaParam1(...tupla);
+function tuplaParam2(...params) {
+    console.log(Array.isArray(params));
+    console.log(`2) ${params[0]} ${params[1]} ${params[2]}`);
+}
+tuplaParam2(...tupla);
 //# sourceMappingURL=ecmascript.js.map

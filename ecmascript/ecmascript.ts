@@ -61,3 +61,36 @@ function contagemRegressiva(inicio: number = 5, fim: number = inicio - 5): void 
 
 contagemRegressiva()
 contagemRegressiva(3)
+
+//rest & spread
+const numbers = [1, 10, 55, -5]
+
+console.log(Math.max(...numbers))
+
+const turmaA: string[] = ['Maria', 'João', 'José']
+const turmaB: string[] = ['Priscila', 'Carla', ...turmaA, 'Fernanda']
+
+console.log(turmaA)
+console.log(turmaB)
+
+function retornaArray(...args: number[]): number[]{
+    return args
+}
+const numeros: number[] = retornaArray(5,6,8,1,22,79,23,589)
+console.log(numeros)
+
+console.log(retornaArray(...numbers))
+
+// rest & spread (tupla)
+const tupla: [number, string, boolean] = [1, 'abc', true]
+
+function tuplaParam1(a:number, b:string, c:boolean): void{
+    console.log(`1) ${a} ${b} ${c}`)
+}
+tuplaParam1(...tupla)
+
+function tuplaParam2(...params: [number, string, boolean]): void{
+    console.log(Array.isArray(params));
+    console.log(`2) ${params[0]} ${params[1]} ${params[2]}`) 
+}
+tuplaParam2(...tupla)
