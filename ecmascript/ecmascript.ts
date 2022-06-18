@@ -147,3 +147,22 @@ function esperar3s(callback: (dado: string) => void) {
 esperar3s((resuldado: string) => {
   console.log(resuldado);
 });
+
+// Promise
+function esperar3sPromise() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("3s depois promise...");
+    }, 3000);
+  });
+}
+
+esperar3sPromise().then(console.log);
+
+fetch("https:swapi.dev/api/people/1")
+  .then((res) => res.json())
+  .then((personagens) => personagens.films)
+  .then((films) => fetch(films[0]))
+  .then((resFilm) => resFilm.json())
+  .then(console.log)
+  .catch(console.error);
