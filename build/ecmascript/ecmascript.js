@@ -93,4 +93,13 @@ const notificacoes = 9;
 // console.log(boasVindas)
 const boasVindas = `Boas vindas ${usuarioId} Notificações: ${notificacoes}`;
 console.log(boasVindas);
+// callback
+function esperar3s(callback) {
+    setTimeout(() => {
+        callback("3s depois...");
+    }, 3000);
+}
+esperar3s((resuldado) => {
+    console.log(resuldado);
+});
 //# sourceMappingURL=ecmascript.js.map

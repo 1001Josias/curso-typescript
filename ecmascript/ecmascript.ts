@@ -136,3 +136,14 @@ const notificacoes: number = 9;
 
 const boasVindas = `Boas vindas ${usuarioId} Notificações: ${notificacoes}`;
 console.log(boasVindas);
+
+// callback
+function esperar3s(callback: (dado: string) => void) {
+  setTimeout(() => {
+    callback("3s depois...");
+  }, 3000);
+}
+
+esperar3s((resuldado: string) => {
+  console.log(resuldado);
+});
