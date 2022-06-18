@@ -124,3 +124,15 @@ const {
 
 console.log(descricao);
 console.log(valor);
+
+// template string
+const usuarioId: string = "Usuário";
+
+const notificacoes: number = 9;
+
+// const boasVindas = "Boas vindas " + usuarioId + " Notificações: " + notificacoes;
+
+// console.log(boasVindas)
+
+const boasVindas = `Boas vindas ${usuarioId} Notificações: ${notificacoes}`;
+console.log(boasVindas);
