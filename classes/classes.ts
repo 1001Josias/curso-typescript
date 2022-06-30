@@ -47,16 +47,20 @@ class NovoProduto {
       this.desconto > 0
         ? `(${this.desconto * 100}% off)`
         : "oferta imperdível!";
-    return `${this.nome} custa R$${this.preco} ${desconto}`;
+    return `${this.nome} custa R$${this.precoComDesconto()} ${desconto}`;
+  }
+
+  precoComDesconto(): number {
+    return this.preco * (1 - this.desconto);
   }
 }
 
-const microfone = new NovoProduto("Microfone BM800", 220);
-microfone.desconto = 0.06;
+const microfone = new NovoProduto("Microfone BM800", 200);
+microfone.desconto = 0.05;
 
 const cama = new NovoProduto("Cama Box Casal", 2500, 0.1);
 
-console.log(microfone);
-console.log(cama);
+// console.log(microfone);
+// console.log(cama);
 console.log(microfone.resumo());
 console.log(cama.resumo());
