@@ -41,11 +41,22 @@ class NovoProduto {
     public preco: number,
     public desconto: number = 0
   ) {}
+
+  public resumo(): string {
+    const desconto: string =
+      this.desconto > 0
+        ? `(${this.desconto * 100}% off)`
+        : "oferta imperdível!";
+    return `${this.nome} custa R$${this.preco} ${desconto}`;
+  }
 }
 
 const microfone = new NovoProduto("Microfone BM800", 220);
+microfone.desconto = 0.06;
 
 const cama = new NovoProduto("Cama Box Casal", 2500, 0.1);
 
 console.log(microfone);
 console.log(cama);
+console.log(microfone.resumo());
+console.log(cama.resumo());
