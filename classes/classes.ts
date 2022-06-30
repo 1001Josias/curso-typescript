@@ -33,3 +33,19 @@ const aniversarioEsperto = new DataEsperta(1, 1, 1970);
 console.log(aniversarioEsperto);
 console.log((aniversarioEsperto.dia = 10));
 console.log(aniversarioEsperto);
+
+//Desafio Classe Produto
+class NovoProduto {
+  constructor(
+    public nome: string,
+    public preco: number,
+    public desconto: number = 0
+  ) {}
+}
+
+const microfone = new NovoProduto("Microfone BM800", 220);
+
+const cama = new NovoProduto("Cama Box Casal", 2500, 0.1);
+
+console.log(microfone);
+console.log(cama);
