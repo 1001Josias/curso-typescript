@@ -64,3 +64,42 @@ const cama = new NovoProduto("Cama Box Casal", 2500, 0.1);
 // console.log(cama);
 console.log(microfone.resumo());
 console.log(cama.resumo());
+
+class Carro {
+  private velocidadeAtual: number = 0;
+
+  constructor(
+    public narca: string,
+    public modelo: string,
+    public velocidadeMaxima: number = 200
+  ) {}
+
+  private alterarVelocidade(delta: number): number {
+    const novaVelocidade = this.velocidadeAtual + delta;
+    const velocidadeValida =
+      novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima;
+    if (velocidadeValida) {
+      this.velocidadeAtual = novaVelocidade;
+    } else {
+      this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0;
+    }
+    return this.velocidadeAtual;
+  }
+
+  public acelerar() {
+    return this.alterarVelocidade(5);
+  }
+
+  frear() {
+    return this.alterarVelocidade(-5);
+  }
+}
+
+const carro1 = new Carro("Fork", "Ka", 185);
+
+Array(50)
+  .fill(0)
+  .map(() => console.log(carro1.acelerar()));
+Array(50)
+  .fill(0)
+  .map(() => console.log(carro1.frear()));
