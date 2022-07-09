@@ -123,3 +123,21 @@ console.log(f40.narca);
 console.log(f40.velocidadeMaxima);
 console.log(f40.acelerar());
 console.log(f40.frear());
+
+class Pessoa {
+  private _idade: number = 0;
+
+  get idade(): number {
+    return this._idade;
+  }
+
+  set idade(valor: number) {
+    if (valor > 0 && valor <= 120) {
+      this._idade = valor;
+    }
+  }
+}
+
+const pessoa1 = new Pessoa();
+pessoa1.idade = 50;
+console.log(pessoa1.idade);
