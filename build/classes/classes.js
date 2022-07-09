@@ -114,4 +114,24 @@ class Pessoa {
 const pessoa1 = new Pessoa();
 pessoa1.idade = 50;
 console.log(pessoa1.idade);
+class Matematica {
+    constructor() {
+        this.PI = 3.1416;
+    }
+    areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+const m1 = new Matematica();
+m1.PI = 4.2;
+console.log(m1.areaCirc(4), m1.PI);
+class MatematicaStatica {
+    static areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+MatematicaStatica.PI = 3.1416;
+const area = MatematicaStatica.areaCirc(4);
+const pi = MatematicaStatica.PI;
+console.log(area, pi);
 //# sourceMappingURL=classes.js.map

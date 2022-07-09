@@ -141,3 +141,25 @@ class Pessoa {
 const pessoa1 = new Pessoa();
 pessoa1.idade = 50;
 console.log(pessoa1.idade);
+
+class Matematica {
+  PI: number = 3.1416;
+  areaCirc(raio: number): number {
+    return this.PI * raio * raio;
+  }
+}
+
+const m1 = new Matematica();
+m1.PI = 4.2;
+console.log(m1.areaCirc(4), m1.PI);
+
+class MatematicaStatica {
+  static PI: number = 3.1416;
+  static areaCirc(raio: number): number {
+    return this.PI * raio * raio;
+  }
+}
+
+const area = MatematicaStatica.areaCirc(4);
+const pi = MatematicaStatica.PI;
+console.log(area, pi);
