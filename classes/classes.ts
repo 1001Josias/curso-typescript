@@ -198,3 +198,19 @@ console.log(calc.getResultado());
 calc = new Multiplicacao();
 calc.executar(2, 2, 2, 2);
 console.log(calc.getResultado());
+
+// Construtor Privado & Singleton
+class Unico {
+  private static instance: Unico = new Unico();
+  private constructor() {}
+  static getInstance() {
+    return Unico.instance;
+  }
+
+  agora() {
+    return new Date();
+  }
+}
+
+// const errado = new Unico()
+console.log(Unico.getInstance().agora());

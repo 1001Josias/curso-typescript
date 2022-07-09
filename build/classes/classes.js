@@ -159,4 +159,17 @@ console.log(calc.getResultado());
 calc = new Multiplicacao();
 calc.executar(2, 2, 2, 2);
 console.log(calc.getResultado());
+// Construtor Privado & Singleton
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return Unico.instance;
+    }
+    agora() {
+        return new Date();
+    }
+}
+Unico.instance = new Unico();
+// const errado = new Unico()
+console.log(Unico.getInstance().agora());
 //# sourceMappingURL=classes.js.map
