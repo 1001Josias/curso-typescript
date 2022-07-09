@@ -134,4 +134,29 @@ MatematicaStatica.PI = 3.1416;
 const area = MatematicaStatica.areaCirc(4);
 const pi = MatematicaStatica.PI;
 console.log(area, pi);
+// Classe Abstrata
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
+class Soma extends Calculo {
+    executar(...number) {
+        this.resultado = number.reduce((previousValue, currentValue) => previousValue + currentValue);
+    }
+}
+class Multiplicacao extends Calculo {
+    executar(...number) {
+        this.resultado = number.reduce((previousValue, currentValue) => previousValue * currentValue);
+    }
+}
+let calc = new Soma();
+calc.executar(2, 2, 2, 2);
+console.log(calc.getResultado());
+calc = new Multiplicacao();
+calc.executar(2, 2, 2, 2);
+console.log(calc.getResultado());
 //# sourceMappingURL=classes.js.map

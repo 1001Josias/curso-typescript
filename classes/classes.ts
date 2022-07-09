@@ -163,3 +163,38 @@ class MatematicaStatica {
 const area = MatematicaStatica.areaCirc(4);
 const pi = MatematicaStatica.PI;
 console.log(area, pi);
+
+// Classe Abstrata
+abstract class Calculo {
+  protected resultado: number = 0;
+
+  abstract executar(...number: number[]): void;
+
+  getResultado(): number {
+    return this.resultado;
+  }
+}
+
+class Soma extends Calculo {
+  executar(...number: number[]): void {
+    this.resultado = number.reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
+  }
+}
+
+class Multiplicacao extends Calculo {
+  executar(...number: number[]): void {
+    this.resultado = number.reduce(
+      (previousValue, currentValue) => previousValue * currentValue
+    );
+  }
+}
+
+let calc: Calculo = new Soma();
+calc.executar(2, 2, 2, 2);
+console.log(calc.getResultado());
+
+calc = new Multiplicacao();
+calc.executar(2, 2, 2, 2);
+console.log(calc.getResultado());
