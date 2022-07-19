@@ -7,10 +7,25 @@
     <title>Document</title>
   </head>
   <body>
+    <script src="/node_modules/systemjs/dist/system.js"></script>
     <!-- <script src="introduction/basic.js"></script> -->
     <!-- <script src="tipos/tipos.js"></script> -->
     <!-- <script src="compilador/compilador.js"></script> -->
     <!-- <script src="build/ecmascript/ecmascript.js"></script> -->
-    <script src="build/classes/desafio.js"></script>
+    <!-- <script src="build/classes/desafio.js"></script> -->
+    <script src="build/namespaces/retangulo.js"></script>
+    <script src="build/namespaces/circunferencia.js"></script>
+    <script src="build/namespaces/namespaces.js"></script>
+    <script>
+      SystemJS.config({
+        baseUrl: "/modulos",
+        packages: {
+          "/build/modulos": {
+            defaultJSExtension: true,
+          },
+        },
+      });
+      SystemJS.import("./build/modulos/modulos.js");
+    </script>
   </body>
 </html>

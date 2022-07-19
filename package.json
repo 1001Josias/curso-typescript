@@ -21,6 +21,7 @@
   "homepage": "https://github.com/1001Josias/curso-typescript#readme",
   "devDependencies": {
     "nodemon": "^2.0.16",
+    "systemjs": "^0.21.6",
     "ts-node": "^10.8.0"
   }
 }
