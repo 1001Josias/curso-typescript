@@ -16,6 +16,16 @@
     <script src="build/namespaces/retangulo.js"></script>
     <script src="build/namespaces/circunferencia.js"></script>
     <script src="build/namespaces/namespaces.js"></script>
-    <script src="build/modulos/modulos.js"></script>
+    <script>
+      SystemJS.config({
+        baseUrl: "/modulos",
+        packages: {
+          "/build/modulos": {
+            defaultJSExtension: true,
+          },
+        },
+      });
+      SystemJS.import("./build/modulos/modulos.js");
+    </script>
   </body>
 </html>
