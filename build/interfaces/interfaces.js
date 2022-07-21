@@ -28,4 +28,7 @@ class Cliente {
 }
 const cliente = new Cliente();
 cliente.saldar("Helena");
+let potencia;
+potencia = (base, exp) => Math.pow(base, exp);
+console.log(potencia(3, 10));
 //# sourceMappingURL=interfaces.js.map

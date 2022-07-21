@@ -40,3 +40,13 @@ class Cliente implements Scopo.Pessoa {
 const cliente: Cliente = new Cliente();
 
 cliente.saldar("Helena");
+
+// Interface Função
+interface FuncaoCalculo {
+  (a: number, b: number): number;
+}
+
+let potencia: FuncaoCalculo;
+
+potencia = (base: number, exp: number) => Math.pow(base, exp);
+console.log(potencia(3, 10));
