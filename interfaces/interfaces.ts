@@ -3,6 +3,7 @@ namespace Scopo {
     nome: string;
     idade?: number;
     [prop: string]: any;
+    saldar: (sobrenome: string) => void;
   }
 }
 
@@ -14,11 +15,15 @@ function mudarNome(pessoa: Scopo.Pessoa): void {
   pessoa.nome = "Maria";
 }
 
-let pessoa = {
+let pessoa: Scopo.Pessoa = {
   nome: "João",
   idade: 27,
+  saldar(sobrenome) {
+    console.log(sobrenome);
+  },
 };
 
 saldar(pessoa);
 mudarNome(pessoa);
-saldar({ nome: "Joana", idade: 55 });
+// saldar({ nome: "Joana", idade: 55 });
+pessoa.saldar("Pedro");
