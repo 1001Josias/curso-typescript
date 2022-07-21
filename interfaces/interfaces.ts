@@ -27,3 +27,16 @@ saldar(pessoa);
 mudarNome(pessoa);
 // saldar({ nome: "Joana", idade: 55 });
 pessoa.saldar("Pedro");
+
+class Cliente implements Scopo.Pessoa {
+  nome = "Maria";
+  ultimaCompra: Date = new Date();
+  saldar(sobrenome: string): void {
+    const message: string = `Olá ${this.nome} ${sobrenome}, seja bem vinda! \n\n Sua última compra foi ${this.ultimaCompra}`;
+    console.log(message);
+  }
+}
+
+const cliente: Cliente = new Cliente();
+
+cliente.saldar("Helena");

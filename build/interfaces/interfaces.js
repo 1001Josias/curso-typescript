@@ -16,4 +16,16 @@ saldar(pessoa);
 mudarNome(pessoa);
 // saldar({ nome: "Joana", idade: 55 });
 pessoa.saldar("Pedro");
+class Cliente {
+    constructor() {
+        this.nome = "Maria";
+        this.ultimaCompra = new Date();
+    }
+    saldar(sobrenome) {
+        const message = `Olá ${this.nome} ${sobrenome}, seja bem vinda! \n\n Sua última compra foi ${this.ultimaCompra}`;
+        console.log(message);
+    }
+}
+const cliente = new Cliente();
+cliente.saldar("Helena");
 //# sourceMappingURL=interfaces.js.map
