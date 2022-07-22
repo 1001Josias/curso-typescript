@@ -50,3 +50,42 @@ let potencia: FuncaoCalculo;
 
 potencia = (base: number, exp: number) => Math.pow(base, exp);
 console.log(potencia(3, 10));
+
+interface A {
+  a(): void;
+}
+
+interface B {
+  b(): void;
+}
+
+interface ABC extends A, B {
+  c(): void;
+}
+
+class RealA implements A {
+  a(): void {}
+}
+
+class RealAB implements A, B {
+  a(): void {}
+  b(): void {}
+}
+
+class RealABC implements ABC {
+  a(): void {}
+  b(): void {}
+  c(): void {}
+}
+
+function test(abc: RealABC): void {
+  console.log(abc);
+}
+
+test(new RealABC());
+
+abstract class AbstrataABD implements A, B {
+  a(): void {}
+  b(): void {}
+  abstract d(): void;
+}
