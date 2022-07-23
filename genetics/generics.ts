@@ -37,3 +37,10 @@ imprimir<{ nome: string; idade: number }>([
 type Aluno = { nome: string; idade: number };
 
 imprimir<Aluno>([{ idade: 22, nome: "qlq nome" }]);
+
+// Tipo função com generics
+type Echo = <T>(object: T) => T;
+let chamarEcho: Echo;
+
+chamarEcho = echoMelhorado;
+chamarEcho<number>(5);
