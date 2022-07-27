@@ -81,3 +81,32 @@ console.log(
 // console.log(new OperacaoBinaria(5, 6).executar());
 // console.log(new OperacaoBinaria("Bom ", "dia").executar());
 // console.log(new OperacaoBinaria({}, {}).executar());
+
+class Fila<T> {
+  private fila: Array<T>;
+  constructor(...args: T[]) {
+    this.fila = args;
+  }
+
+  entrar(elemento: T): void {
+    this.fila.push(elemento);
+  }
+  proximo(): T | undefined {
+    return this.fila.shift();
+  }
+
+  imprimir() {
+    console.log(this.fila);
+  }
+}
+
+const fila = new Fila("Ana", "Marta", "João", "Juliana");
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
