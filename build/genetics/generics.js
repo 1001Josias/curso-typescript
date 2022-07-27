@@ -59,4 +59,28 @@ console.log(new DiferencaEntreDatas(new Date("07/06/2022"), new Date("07/16/2022
 // console.log(new OperacaoBinaria(5, 6).executar());
 // console.log(new OperacaoBinaria("Bom ", "dia").executar());
 // console.log(new OperacaoBinaria({}, {}).executar());
+class Fila {
+    constructor(...args) {
+        this.fila = args;
+    }
+    entrar(elemento) {
+        this.fila.push(elemento);
+    }
+    proximo() {
+        return this.fila.shift();
+    }
+    imprimir() {
+        console.log(this.fila);
+    }
+}
+const fila = new Fila("Ana", "Marta", "João", "Juliana");
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
+console.log(fila.proximo());
+fila.imprimir();
 //# sourceMappingURL=generics.js.map
