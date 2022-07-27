@@ -31,4 +31,40 @@ cliente.saldar("Helena");
 let potencia;
 potencia = (base, exp) => Math.pow(base, exp);
 console.log(potencia(3, 10));
+class RealA {
+    a() { }
+}
+class RealAB {
+    a() { }
+    b() { }
+}
+class RealABC {
+    a() { }
+    b() { }
+    c() { }
+}
+function test(abc) {
+    console.log(abc);
+}
+test(new RealABC());
+class AbstrataABD {
+    a() { }
+    b() { }
+}
+Object.prototype.log = function () {
+    console.log(this.toString());
+};
+let x = 2;
+let y = 3;
+let z = 4;
+x.log();
+y.log();
+z.log();
+let cli = {
+    nome: "Pedro",
+    toString() {
+        return this;
+    },
+};
+cli.log();
 //# sourceMappingURL=interfaces.js.map
