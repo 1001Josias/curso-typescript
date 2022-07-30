@@ -85,5 +85,36 @@ console.log(fila.proximo());
 fila.imprimir();
 const novaFila = new Fila(1, 2, 3, 4, 5);
 novaFila.imprimir();
-// const filaErrada = new Fila(false, true);
+class Mapa {
+    constructor() {
+        this.mapa = new Array();
+    }
+    imprimir() {
+        console.log(this.mapa);
+    }
+    limpar() {
+        this.mapa;
+    }
+    colocar(item) {
+        const resultado = this.obter(item.chave);
+        if (resultado) {
+            resultado.valor = item.valor;
+        }
+        else {
+            this.mapa.push(item);
+        }
+    }
+    obter(chave) {
+        return this.mapa.filter((item) => item.chave === chave)[0] || null;
+    }
+}
+const mapa = new Mapa();
+mapa.colocar({ chave: 1, valor: "Pedro" });
+mapa.imprimir();
+mapa.colocar({ chave: 2, valor: "Rebeca" });
+mapa.colocar({ chave: 3, valor: "Maria" });
+mapa.colocar({ chave: 1, valor: "Gustavo" });
+console.log(mapa.obter(2));
+mapa.limpar();
+mapa.imprimir();
 //# sourceMappingURL=generics.js.map
