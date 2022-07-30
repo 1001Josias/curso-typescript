@@ -116,3 +116,44 @@ const novaFila = new Fila(1, 2, 3, 4, 5);
 novaFila.imprimir();
 
 // const filaErrada = new Fila(false, true);
+
+// Desafio Mapa
+// Array de objetos (chave/valor) -> itens
+// Métodos: obter(chave), colocar({C,V}), limpar(), imprimir()
+
+type Par<C, V> = { chave: C; valor: V };
+
+class Mapa<C, V> {
+  mapa: Array<Par<C, V>> = new Array<Par<C, V>>();
+  imprimir() {
+    console.log(this.mapa);
+  }
+
+  limpar() {
+    this.mapa;
+  }
+
+  colocar(item: Par<C, V>) {
+    const resultado = this.obter(item.chave);
+    if (resultado) {
+      resultado.valor = item.valor;
+    } else {
+      this.mapa.push(item);
+    }
+  }
+
+  obter(chave: C): Par<C, V> | null {
+    return this.mapa.filter((item) => item.chave === chave)[0] || null;
+  }
+}
+
+const mapa = new Mapa<number, string>();
+mapa.colocar({ chave: 1, valor: "Pedro" });
+mapa.imprimir();
+mapa.colocar({ chave: 2, valor: "Rebeca" });
+mapa.colocar({ chave: 3, valor: "Maria" });
+mapa.colocar({ chave: 1, valor: "Gustavo" });
+
+console.log(mapa.obter(2));
+mapa.limpar();
+mapa.imprimir();
