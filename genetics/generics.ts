@@ -82,7 +82,7 @@ console.log(
 // console.log(new OperacaoBinaria("Bom ", "dia").executar());
 // console.log(new OperacaoBinaria({}, {}).executar());
 
-class Fila<T> {
+class Fila<T extends number | string> {
   private fila: Array<T>;
   constructor(...args: T[]) {
     this.fila = args;
@@ -110,3 +110,9 @@ console.log(fila.proximo());
 fila.imprimir();
 console.log(fila.proximo());
 fila.imprimir();
+
+const novaFila = new Fila(1, 2, 3, 4, 5);
+
+novaFila.imprimir();
+
+// const filaErrada = new Fila(false, true);

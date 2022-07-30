@@ -83,4 +83,7 @@ console.log(fila.proximo());
 fila.imprimir();
 console.log(fila.proximo());
 fila.imprimir();
+const novaFila = new Fila(1, 2, 3, 4, 5);
+novaFila.imprimir();
+// const filaErrada = new Fila(false, true);
 //# sourceMappingURL=generics.js.map
